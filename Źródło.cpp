@@ -1,6 +1,5 @@
 #include <iostream>
 #include "perceptron.h"
-#include <fstream>
 
 using namespace std;
 
