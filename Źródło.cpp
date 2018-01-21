@@ -20,7 +20,6 @@ int main()
 		tab[i].wypisz();
 
 	int zapamietana;
-	//for(int k = 0; k < 5; k++)
 	for (int i = 0; i < 150; i++) {
 		zapamietana = 0;
 		for (int j = 0; j < 10; j++)
@@ -31,6 +30,8 @@ int main()
 				zapamietana = j;
 
 		tab[zapamietana].uaktualnij_wagi();
+		for(int z = 0 ; z < 10 ; z++)
+			tab[z].zmniejsz_wspolczynnik();
 	}
 	
 	cout << "Wagi na koniec" << endl;
@@ -38,63 +39,21 @@ int main()
 		tab[i].wypisz();
 
 
+	double* tab1;
+	for (int i = 0; i < 150; i++) {
+		tab1 = d.zwroc_wektor(i);
+		zapamietana = 0;
+		for (int j = 0; j < 10; j++)
+			tab[j].ustaw_wektor(tab1);
+		zapamietana = 0;
+		for (int j = 1; j < 10; j++)
+			if (tab[zapamietana].aktywacja() < tab[j].aktywacja())
+				zapamietana = j;
+		cout << endl << "Neutron " << zapamietana + 1 << endl;
+	}
+
+
 	
-	double* tab1,* tab2,* tab3, *tab4, *tab5, *tab6;
-	tab1 = d.zwroc_wektor(0);
-	tab2 = d.zwroc_wektor(23);
-	tab3 = d.zwroc_wektor(57);
-	tab4 = d.zwroc_wektor(92);
-	tab5 = d.zwroc_wektor(114);
-	tab6 = d.zwroc_wektor(132);
-
-	for (int j = 0; j < 10; j++)
-		tab[j].ustaw_wektor(tab1);
-	zapamietana = 0;
-	for (int j = 1; j < 10; j++)
-		if (tab[zapamietana].aktywacja() < tab[j].aktywacja())
-			zapamietana = j;
-	cout << endl << "Neutron " << zapamietana + 1 << endl;
-
-	for (int j = 0; j < 10; j++)
-		tab[j].ustaw_wektor(tab2);
-	zapamietana = 0;
-	for (int j = 1; j < 10; j++)
-		if (tab[zapamietana].aktywacja() < tab[j].aktywacja())
-			zapamietana = j;
-	cout << endl << "Neutron " << zapamietana + 1 << endl;
-
-	for (int j = 0; j < 10; j++)
-		tab[j].ustaw_wektor(tab3);
-	zapamietana = 0;
-	for (int j = 1; j < 10; j++)
-		if (tab[zapamietana].aktywacja() < tab[j].aktywacja())
-			zapamietana = j;
-	cout << endl << "Neutron " << zapamietana + 1 << endl;
-	
-	for (int j = 0; j < 10; j++)
-		tab[j].ustaw_wektor(tab4);
-	zapamietana = 0;
-	for (int j = 1; j < 10; j++)
-		if (tab[zapamietana].aktywacja() < tab[j].aktywacja())
-			zapamietana = j;
-	cout << endl << "Neutron " << zapamietana + 1 << endl;
-
-	for (int j = 0; j < 10; j++)
-		tab[j].ustaw_wektor(tab5);
-	zapamietana = 0;
-	for (int j = 1; j < 10; j++)
-		if (tab[zapamietana].aktywacja() < tab[j].aktywacja())
-			zapamietana = j;
-	cout << endl << "Neutron " << zapamietana + 1 << endl;
-
-	for (int j = 0; j < 10; j++)
-		tab[j].ustaw_wektor(tab6);
-	zapamietana = 0;
-	for (int j = 1; j < 10; j++)
-		if (tab[zapamietana].aktywacja() < tab[j].aktywacja())
-			zapamietana = j;
-	cout << endl << "Neutron " << zapamietana + 1 << endl;
-
 	
 	system("Pause");
 }

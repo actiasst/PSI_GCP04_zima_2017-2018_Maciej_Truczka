@@ -14,7 +14,7 @@ Neuron::Neuron(std::string tmp) {
 	wspolczynnik = 2.3;
 	srand(time(NULL));
 	for (int i = 0; i < 4; i++) {
-		w[i] = ((rand() % 201) - 100) / 100.;
+		w[i] = ((rand() % 21) - 10) / 10.;
 		x[i] = 0;
 	}
 	nazwa = tmp;
@@ -44,4 +44,8 @@ double Neuron::aktywacja() {
 void Neuron::uaktualnij_wagi() {
 	for (int i = 0; i < 4; i++)
 		w[i] += wspolczynnik*(x[i] - w[i]);
+}
+
+void Neuron::zmniejsz_wspolczynnik() {
+	wspolczynnik -= 0.01;
 }

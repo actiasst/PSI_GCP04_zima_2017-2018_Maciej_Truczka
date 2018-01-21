@@ -18,4 +18,5 @@ public:
 	void ustaw_wektor(double*);
 	double aktywacja();
 	void uaktualnij_wagi();
+	void zmniejsz_wspolczynnik();
 };
